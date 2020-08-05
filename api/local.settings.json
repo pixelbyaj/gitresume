@@ -1,10 +1,7 @@
 {
-    "IsEncrypted": false,
-    "Values": {
-        "AzureWebJobsStorage": "",
-        "FUNCTIONS_WORKER_RUNTIME": "node"
-    },
-    "Host": {
-        "CORS": "https://white-island-08116ee00.azurestaticapps.net/"
-    }
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "",
+    "FUNCTIONS_WORKER_RUNTIME": "node"
+  }
 }
