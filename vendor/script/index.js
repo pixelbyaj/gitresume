@@ -1,6 +1,6 @@
 const gitCV = function() {
 
-    var apiUrl = "https://blue-flower-0b97de910.azurestaticapps.net/api/git/" + userName;
+    var apiUrl = "https://salmon-sand-07516ac00.azurestaticapps.net/api/gitcv/" + userName;
     var loading = false;
     var interval;
 
