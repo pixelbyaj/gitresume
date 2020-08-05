@@ -37,6 +37,8 @@ const gitCV = function() {
     const ready = function() {
         $("#gitcv").show();
         $(".copyrights").show();
+        $(".preloader").css("display", "none");
+        clearInterval(interval);
     };
 
     const handleErrors = function(response) {
