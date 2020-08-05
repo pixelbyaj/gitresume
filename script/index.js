@@ -19,7 +19,7 @@ const gitCV = function() {
     const loader = function() {
         interval = setInterval(function() {
             if (loading) {
-                $(".preloader-animation").css("opacity", 0.8);
+                $(".preloader-animation").css("opacity", 0.9);
             } else {
                 $(".preloader-animation").css("opacity", 0.1);
             }
