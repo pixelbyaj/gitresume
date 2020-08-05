@@ -257,20 +257,22 @@
                         </div>
                         <div data-bind="ifnot: isPub">
                             <div class="block-title">
-                                 Not Available
+                                Not Available
                             </div>
                         </div>
-                        <div class="timeline timeline-second-style clearfix" data-bind="foreach: publications">
-
-                            <div class="timeline-item clearfix">
-                                <div class="left-part">
-                                    <h5 class="item-period"><span data-bind="text: releaseDate"></span></h5>
-                                    <span class="item-company" data-bind="text: publisher"></span>
-                                </div>
-                                <div class="divider"></div>
-                                <div class="right-part">
-                                    <h4 class="item-title"><a data-bind="text: name, attr: {href: website}"></a></h4>
-                                    <p data-bind="text: summary"></p>
+                        <div class="timeline timeline-second-style clearfix" data-bind="if: isPub">
+                            <div data-bind="foreach: publications">
+                                <div class="timeline-item clearfix">
+                                    <div class="left-part">
+                                        <h5 class="item-period"><span data-bind="text: releaseDate"></span></h5>
+                                        <span class="item-company" data-bind="text: publisher"></span>
+                                    </div>
+                                    <div class="divider"></div>
+                                    <div class="right-part">
+                                        <h4 class="item-title"><a data-bind="text: name, attr: {href: website}"></a>
+                                        </h4>
+                                        <p data-bind="text: summary"></p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -284,23 +286,25 @@
                         </div>
                         <div data-bind="ifnot: isVol">
                             <div class="block-title">
-                                 Not Available
+                                Not Available
                             </div>
                         </div>
-                        <div class="timeline timeline-second-style clearfix" data-bind="if: isVol, foreach: volunteers">
-                            <div class="timeline-item clearfix">
-                                <div class="left-part">
-                                    <h5 class="item-period"><span data-bind="text: startDate"></span> - <span
-                                            data-bind="text: endDate"></span></h5>
-                                    <span class="item-company" data-bind="text: organization"></span>
-                                </div>
-                                <div class="divider"></div>
-                                <div class="right-part">
-                                    <h4 class="item-title" data-bind="text: position"></h4>
-                                    <p data-bind="text: summary"></p>
-                                    <p data-bind="foreach: highlights">
-                                        <span class="badge badge-primary" data-bind="text: $data"></span>
-                                    </p>
+                        <div class="timeline timeline-second-style clearfix" data-bind="if: isVol">
+                            <div data-bind="foreach: volunteers">
+                                <div class="timeline-item clearfix">
+                                    <div class="left-part">
+                                        <h5 class="item-period"><span data-bind="text: startDate"></span> - <span
+                                                data-bind="text: endDate"></span></h5>
+                                        <span class="item-company" data-bind="text: organization"></span>
+                                    </div>
+                                    <div class="divider"></div>
+                                    <div class="right-part">
+                                        <h4 class="item-title" data-bind="text: position"></h4>
+                                        <p data-bind="text: summary"></p>
+                                        <p data-bind="foreach: highlights">
+                                            <span class="badge badge-primary" data-bind="text: $data"></span>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
