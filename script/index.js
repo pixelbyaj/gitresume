@@ -162,11 +162,11 @@ const gitCV = function() {
             if (workSection) {
                 self.work1 = ko.observable(workSection);
             }
-            if (jsonResume.volunteer.length > 0) {
+            if (jsonResume.volunteer && jsonResume.volunteer.length > 0) {
                 self.volunteers = ko.observable(jsonResume.volunteer);
                 self.isVol = ko.observable(true);
             }
-            if (jsonResume.publications.length > 0) {
+            if (jsonResume.publications && jsonResume.publications.length > 0) {
                 self.publications = ko.observable(jsonResume.publications);
                 self.isPub = ko.observable(true);
             }
