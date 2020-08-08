@@ -66,7 +66,7 @@ const gitCV = function() {
                 templateId: "education",
                 backgroundColor: "transparent",
                 sectionClass: "text-left",
-                verticalAlignMiddle: true
+                verticalAlignMiddle: false
             },
             {
                 anchor: "Experience",
