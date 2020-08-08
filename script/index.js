@@ -14,7 +14,7 @@ const gitCV = function() {
     if (!userName) {
         userName = "pixelbyaj";
     }
-    var apiUrl = " http://orange-grass-0901a9f00.azurestaticapps.net/api/gitcv/" + userName;
+    var apiUrl = " https://orange-grass-0901a9f00.azurestaticapps.net/api/gitcv/" + userName;
 
     const loader = function() {
         interval = setInterval(function() {
