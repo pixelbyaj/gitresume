@@ -7,6 +7,12 @@ body {
     overflow: hidden;
     color: #d5d5d5;
     background-color: #222!important;
+    height: 100vh;
+}
+
+#sidebarMenu {
+    z-index: 1;
+    height: 100vh;
 }
 
 .preloader,
@@ -18,6 +24,14 @@ body {
     height: 100%;
     z-index: 9999;
     background: #222;
+    text-align: center;
+}
+
+.contact-info {
+    border-top: 1px solid rgb(177, 175, 175, 0.2);
+    padding: 5px 0;
+    font-size: 14px;
+    color: #bbb;
 }
 
 .preloader-animation {
@@ -28,7 +42,7 @@ body {
     background-color: inherit;
     color: inherit;
     opacity: 1;
-    transition: opacity 1s;
+    transition: opacity 0.2s;
     transform: translate3d(-50%, -50%, 0);
 }
 
@@ -36,7 +50,7 @@ body {
     width: 52px;
     height: 52px;
     margin: 100px auto;
-    background-color: #04b4e0;
+    background-color: #fff;
     border-radius: 100%;
     -webkit-animation: sk-scaleout 1s infinite ease-in-out;
     animation: sk-scaleout 1s infinite ease-in-out;
@@ -66,7 +80,7 @@ body {
 }
 
 .header-titles h2 {
-    font-size: 32px;
+    font-size: 26px;
     font-weight: 600;
     color: #f5f5f5;
     margin: 5px 0 7px;
@@ -136,7 +150,6 @@ ul {
 
 .copyrights {
     color: #bbb;
-    width: 380px;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -164,7 +177,7 @@ ul {
 
 .page-title h2 {
     position: relative;
-    font-size: 32px;
+    font-size: 26px;
     z-index: 1;
 }
 
@@ -174,7 +187,7 @@ ul {
 .page-title h2 i,
 .block-title h3 i,
 .block-title h4 i {
-    color: #0798ec;
+    color: #fff;
 }
 
 .block-title {
@@ -213,8 +226,8 @@ p {
 }
 
 .info-list .title {
-    color: #0798ec;
-    margin-right: 5px;
+    color: #fff;
+    padding: 0 5px;
     font-weight: 600;
 }
 
@@ -247,7 +260,7 @@ p {
     position: relative;
     display: inline-block;
     background-color: #222;
-    border: 1px solid #0798ec;
+    border: 1px solid #fff;
     -moz-border-radius: 8px;
     -webkit-border-radius: 8px;
     border-radius: 8px;
@@ -262,7 +275,7 @@ p {
 .skills-second-style .skill-container:before {
     content: '';
     position: absolute;
-    background-color: #04b4e0;
+    background-color: #fff;
 }
 
 .skills-second-style .skill-container .skill-percentage.skill-master {
@@ -278,7 +291,7 @@ p {
 }
 
 .skills-second-style .skill-percentage {
-    background-color: #04b4e0;
+    background-color: #fff;
     border: 2px solid #222;
     -moz-border-radius: 9px;
     -webkit-border-radius: 9px;
@@ -308,7 +321,7 @@ p {
 }
 
 .timeline-second-style .left-part {
-    width: 20%;
+    width: 25%;
     display: table-cell;
     padding-right: 25px;
     min-height: 100%;
@@ -317,7 +330,7 @@ p {
 }
 
 .timeline-second-style .right-part {
-    width: 80%;
+    width: 75%;
     display: table-cell;
     padding-left: 25px;
     padding-right: 15px;
@@ -332,7 +345,7 @@ p {
 .timeline-second-style .divider {
     position: absolute;
     top: 0;
-    left: 20%;
+    left: 25%;
     bottom: 0;
     width: 1px;
     background-color: #444
@@ -348,7 +361,7 @@ p {
     position: absolute;
     margin-left: -8px;
     border-radius: 10px;
-    background-color: #04b4e0;
+    background-color: #fff;
     opacity: .25;
     z-index: 0
 }
@@ -363,7 +376,7 @@ p {
     margin-left: -4px;
     background-color: #222;
     border-radius: 5px;
-    border: 2px solid #04b4e0;
+    border: 2px solid #fff;
     z-index: 1
 }
 
@@ -416,16 +429,15 @@ p {
     max-height: 40px
 }
 
-.copyrights {
-    display: none;
-}
-
 @media (min-width: 576px) {
     .pt-cxs-4 {
         padding-top: 0!important;
     }
     .copyrights {
         display: none;
+    }
+    .contact-info .info-list {
+        text-align: left!important;
     }
 }
 
@@ -439,6 +451,9 @@ p {
     .copyrights {
         display: block;
     }
+    .contact-info .info-list {
+        text-align: left!important;
+    }
 }
 
 
@@ -447,9 +462,6 @@ p {
 @media (min-width: 992px) {
     .pt-cxs-4 {
         padding-top: 0!important;
-    }
-    .copyrights {
-        display: block;
     }
 }
 
@@ -460,7 +472,64 @@ p {
     .pt-cxs-4 {
         padding-top: 0!important;
     }
-    .copyrights {
-        display: block;
-    }
+}
+
+.autoscroll {
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 600px;
+}
+
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+
+/* button */
+
+::-webkit-scrollbar-button {
+    background: transparent;
+}
+
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: rgb(218, 216, 216);
+}
+
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+    background: #666;
+}
+
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+/* The track NOT covered by the handle.
+::-webkit-scrollbar-track-piece {
+    background: #000; 
+}
+
+/* Corner */
+
+::-webkit-scrollbar-corner {
+    background: #999;
+}
+
+
+/* Resizer */
+
+::-webkit-resizer {
+    background: #111;
 }
