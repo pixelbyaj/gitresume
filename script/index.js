@@ -14,7 +14,7 @@ const gitCV = function() {
     if (!userName) {
         userName = "pixelbyaj";
     }
-    var apiUrl = "https://yellow-bay-0e3efea00.azurestaticapps.net/api/gitcv/" + userName;
+    var apiUrl = "http://localhost:7071/api/gitcv/" + userName;
 
     const loader = function() {
         interval = setInterval(function() {
