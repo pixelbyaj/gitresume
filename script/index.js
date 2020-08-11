@@ -41,41 +41,74 @@ const gitCV = function() {
         clearInterval(interval);
     };
 
+    const show404 = function() {
+        var notFoundTemplate = `<div id="notfound">
+            <div class="notfound">
+                <div class="notfound-404">
+                    <h1>404</h1>
+                </div>
+                <h2>Oops, The Page you are looking for can't be found!</h2>
+                <form class="notfound-search" action="/" method="get">
+                    <input type="text" placeholder="Search..." name="q" id="q">
+                    <button type="button" id="search">Search</button>
+                </form>
+            </div>
+        </div>`;
+        $("#404").html(notFoundTemplate);
+        $("#search").on("click", function() {
+            var searchUrl = window.origin + "?q=" + $("#q").val();
+            window.location = searchUrl;
+        });
+    }
+
     const handleErrors = function(response) {
         hideAll();
+        show404();
     };
 
     function invoke(jsonResume) {
 
         var sections = [{
-                anchor: "About Me",
-                templateId: "aboutme",
-                backgroundColor: "transparent",
-                sectionClass: "text-left",
-                verticalAlignMiddle: true
-            },
-            {
+            anchor: "About Me",
+            templateId: "aboutme",
+            backgroundColor: "transparent",
+            sectionClass: "text-left",
+            verticalAlignMiddle: true
+        }];
+
+        jsonResume.skills = jsonResume.skills || [];
+        if (jsonResume.skills.length > 0) {
+            sections.push({
                 anchor: "Skills",
                 templateId: "skills",
                 backgroundColor: "transparent",
                 sectionClass: "text-left",
                 verticalAlignMiddle: true
-            },
-            {
+            });
+        }
+
+        jsonResume.education = jsonResume.education || [];
+        if (jsonResume.education.length > 0) {
+            sections.push({
                 anchor: "Education",
                 templateId: "education",
                 backgroundColor: "transparent",
                 sectionClass: "text-left",
                 verticalAlignMiddle: true
-            },
-            {
+            });
+        }
+
+        jsonResume.work = jsonResume.work || [];
+        if (jsonResume.work.length > 0) {
+            sections.push({
                 anchor: "Experience",
                 templateId: "experience",
                 backgroundColor: "transparent",
                 sectionClass: "text-left",
                 verticalAlignMiddle: false,
-            }
-        ];
+            });
+        }
+
         jsonResume.volunteer = jsonResume.volunteer || [];
         jsonResume.publications = jsonResume.publications || [];
         if (jsonResume.volunteer.length > 0 || jsonResume.publications.length > 0) {
@@ -87,6 +120,7 @@ const gitCV = function() {
                 verticalAlignMiddle: true
             });
         }
+
         jsonResume.awards = jsonResume.awards || [];
         if (jsonResume.awards.length > 0) {
             sections.push({
@@ -97,11 +131,10 @@ const gitCV = function() {
                 verticalAlignMiddle: true
             });
         }
+
         new SitePage("sitePage", {
             //brandname
-            brandName: "",
             backgroundColor: "#444",
-            verticalAlignMiddle: true, // By default it would be true	
             //sections
             sections: sections,
             //navigation
@@ -117,15 +150,9 @@ const gitCV = function() {
             easing: "ease", //ease|ease-in|ease-out|ease-in-out|cubic-bezier(n,n,n,n)
             transitionSpeed: 1000, //speed in ms
             //scrolling
-            autoScrolling: false, //true|false
+            autoScrolling: true, //true|false
             keyboardNavigation: true, //true|false
         });
-
-        var getCompanyStartEndDate = function(item) {
-            debugger
-            var _this = this;
-            console.log(this);
-        };
 
         function GitResumeModel() {
 
@@ -139,6 +166,7 @@ const gitCV = function() {
             jsonResume.skills = jsonResume.skills || [];
             self.profiles = ko.observableArray(jsonResume.basics.profiles);
             self.skills = ko.observableArray(jsonResume.skills);
+
             //#region  Contacts
             var getLocation = function() {
                 var location = jsonResume.basics.location;
@@ -201,12 +229,10 @@ const gitCV = function() {
             //#endregion
 
             //#region Education
-            jsonResume.education = jsonResume.education || [];
             self.education = ko.observableArray(jsonResume.education);
             //#endregion
 
             //#region Work
-            jsonResume.work = jsonResume.work || [];
             jsonResume.work.forEach(function(work) {
                 work.companyDate = `${work.startDate || ''} - ${work.endDate || ''}`;
                 work.highlights = work.highlights || [];
@@ -215,21 +241,20 @@ const gitCV = function() {
             //#endregion
 
             //#region Volunteer
-            if (jsonResume.volunteer && jsonResume.volunteer.length > 0) {
+            if (jsonResume.volunteer.length > 0) {
                 self.volunteers = ko.observable(jsonResume.volunteer);
                 self.isVol = ko.observable(true);
             }
             //#endregion
 
             //#region Publication
-            if (jsonResume.publications && jsonResume.publications.length > 0) {
+            if (jsonResume.publications.length > 0) {
                 self.publications = ko.observable(jsonResume.publications);
                 self.isPub = ko.observable(true);
             }
             //#endregion
 
             //#region Awards
-            jsonResume.awards = jsonResume.awards || [];
             if (jsonResume.awards.length > 0) {
                 self.isAwards = ko.observable(true);
                 self.awards = ko.observable(jsonResume.awards);
@@ -237,9 +262,20 @@ const gitCV = function() {
             //#endregion
 
             //#region  Interests
-            jsonResume.interests = jsonResume.interests || []
             self.interests = ko.observable(jsonResume.interests);
             //#endregion
+            self.getData = function(item, key) {
+                return item[key] || "NA";
+            }
+
+            self.ifExist = function(item, key, val) {
+                if (item[key] === undefined) {
+                    item[key] = val;
+                    return false;
+                }
+                return true;
+            }
+
         }
 
         ko.applyBindings(new GitResumeModel());
