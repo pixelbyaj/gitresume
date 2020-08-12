@@ -1,20 +1,8 @@
-const gitCV = function() {
+const gitCV = function(userName) {
 
-    var loading = false;
-    var interval;
-
-    var GetUserName = function() {
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
-        const username = urlParams.get('q')
-        return username;
-    }
-
-    var userName = GetUserName();
-    if (!userName) {
-        userName = "pixelbyaj";
-    }
-    var apiUrl = "https://www.gistresume.com/api/gitcv/" + userName;
+    let loading = false;
+    let interval;
+    let apiUrl = "https://www.gistresume.com/api/gitcv/" + userName;
 
     const loader = function() {
         interval = setInterval(function() {
@@ -34,6 +22,35 @@ const gitCV = function() {
         clearInterval(interval);
     };
 
+    function initSitePage(sections, id = "sitePage") {
+        new SitePage(id, {
+            //brandname
+            backgroundColor: "#444",
+            //sections
+            sections: sections,
+            //navigation
+            anchors: false, //true|false
+            navigation: 'vertical', //horizontal|vertical
+            sameurl: true, //true|false
+            hamburger: false, //{
+            //lineColor: "#fff",
+            //closeOnNavigation: false,
+            //backgroundColor: ""
+            //},
+            //transition
+            easing: "ease", //ease|ease-in|ease-out|ease-in-out|cubic-bezier(n,n,n,n)
+            transitionSpeed: 1000, //speed in ms
+            //scrolling
+            autoScrolling: true, //true|false
+            keyboardNavigation: true, //true|false
+        });
+    }
+    if (!userName) {
+        $(".preloader").css("display", "none");
+        return {
+            init: initSitePage
+        }
+    }
     const ready = function() {
         $("#gitcv").show();
         $(".copyrights").show();
@@ -66,9 +83,11 @@ const gitCV = function() {
         show404();
     };
 
+
+
     function invoke(jsonResume) {
 
-        var sections = [{
+        let sections = [{
             anchor: "About Me",
             templateId: "aboutme",
             backgroundColor: "transparent",
@@ -132,27 +151,7 @@ const gitCV = function() {
             });
         }
 
-        new SitePage("sitePage", {
-            //brandname
-            backgroundColor: "#444",
-            //sections
-            sections: sections,
-            //navigation
-            anchors: false, //true|false
-            navigation: 'vertical', //horizontal|vertical
-            sameurl: true, //true|false
-            hamburger: false, //{
-            //lineColor: "#fff",
-            //closeOnNavigation: false,
-            //backgroundColor: ""
-            //},
-            //transition
-            easing: "ease", //ease|ease-in|ease-out|ease-in-out|cubic-bezier(n,n,n,n)
-            transitionSpeed: 1000, //speed in ms
-            //scrolling
-            autoScrolling: true, //true|false
-            keyboardNavigation: true, //true|false
-        });
+        initSitePage(sections);
 
         function GitResumeModel() {
 
@@ -294,7 +293,27 @@ const gitCV = function() {
         init: function() {
             loader();
             fetchJsonResume();
-        }
+        },
+        initSitePage: initSitePage
     }
 }
-new gitCV().init();
+
+var GetUserName = function() {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const username = urlParams.get('q')
+    return username;
+}
+
+let sections = [{
+    anchor: "Help",
+    templateId: "help",
+    backgroundColor: "#fc6c7c",
+    verticalAlignMiddle: true
+}];
+var userName = GetUserName();
+if (!userName) {
+    new gitCV().init(sections, "helpPage");
+} else {
+    new gitCV(userName).init();
+}

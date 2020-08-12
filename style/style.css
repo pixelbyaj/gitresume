@@ -2,12 +2,15 @@
 
 body {
     font-size: 15px;
-    font-family: poppins, Helvetica, sans-serif;
-    line-height: 1.65em;
+    font-family: arial, Helvetica, sans-serif;
     overflow: hidden;
     color: #d5d5d5;
     background-color: #222!important;
     height: 100vh;
+}
+
+#gitcv {
+    display: none;
 }
 
 #sidebarMenu {
@@ -473,6 +476,9 @@ p {
     .pt-cxs-4 {
         padding-top: 0!important;
     }
+    .help h1 {
+        font-size: 8em;
+    }
 }
 
 .autoscroll {
@@ -699,4 +705,103 @@ p {
     .notfound h2 {
         font-size: 18px;
     }
+}
+
+.help {
+    color: #fff;
+    font-family: arial, helvetica !important;
+}
+
+.help h1 {
+    padding: 0;
+    font-weight: 900;
+    font-family: arial, helvetica !important;
+}
+
+.help .block-title p {
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-family: arial, helvetica !important;
+}
+
+.help .input-group {
+    width: 100%;
+}
+
+.help .input-group-text {
+    background-color: #173549;
+    color: #fff;
+    border: 0;
+}
+
+.help input[type='text'] {
+    border: 0 !important;
+    outline: none;
+    width: 50px;
+}
+
+.help input[type='text']:focus {
+    border: 0 !important;
+    outline: none;
+}
+
+.help input[type='submit'] {
+    background-color: #173549;
+    color: #fff;
+    border-style: none;
+    width: 100px;
+}
+
+.help .block-title {
+    padding: 0 0 0 40px;
+}
+
+.help a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.help a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.help a:active {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.help .card {
+    margin: 0 50px;
+    background-color: #173549;
+    min-height: 200px;
+    text-align: left;
+}
+
+.help .steps {
+    color: #e6db74;
+}
+
+.help .steps ul li::before {
+    content: "\2022";
+    /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: #a6e22e;
+    /* Change the color */
+    font-weight: bold;
+    /* If you want it to be bold */
+    display: inline-block;
+    /* Needed to add space between the bullet and the text */
+    width: 1em;
+    /* Also needed for space (tweak if needed) */
+    margin-left: -1em;
+    /* Also needed for space (tweak if needed) */
+}
+
+.help .steps ul li p {
+    padding-left: 10px;
+}
+
+.help p.eg {
+    font-size: 1em;
 }
