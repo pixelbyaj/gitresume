@@ -505,6 +505,41 @@ p {
     .contact-info .info-list {
         text-align: left!important;
     }
+    .help h1 {
+        font-size: 4em;
+    }
+    .help .block-title p {
+        font-size: 1.5em !important;
+        margin-top: 0;
+        margin-bottom: 1rem;
+        font-family: arial, helvetica !important;
+        padding: 0 5px;
+    }
+    .help .block-title {
+        padding: 0!important;
+    }
+    .help .eg {
+        padding: 0 5px;
+    }
+    .help .eg .input-group-text {
+        font-size: 1rem;
+    }
+    .help .eg input.form-control {
+        font-size: 1rem;
+        padding: .375rem .75rem;
+    }
+    .help .card {
+        margin: 0 !important;
+    }
+    .help .card .card-body {
+        padding: 1.25rem 1.25rem 0 1.25em;
+    }
+    .help .card .card-text {
+        font-size: 15px;
+    }
+    .help .card ul {
+        padding: 0 20px;
+    }
 }
 
 
