@@ -456,6 +456,10 @@ p {
     .help .eg {
         padding: 0 5px;
     }
+    .help .input-group {
+        width: 100%;
+        padding: 0 10px;
+    }
     .help .eg .input-group-text {
         font-size: 12px;
     }
@@ -499,6 +503,9 @@ p {
     .pt-cxs-4 {
         padding-top: 0!important;
     }
+    .help h1 {
+        font-size: 6em !important;
+    }
     .copyrights {
         display: block;
     }
@@ -509,7 +516,7 @@ p {
         font-size: 4em;
     }
     .help .block-title p {
-        font-size: 1.5em !important;
+        font-size: 2em !important;
         margin-top: 0;
         margin-bottom: 1rem;
         font-family: arial, helvetica !important;
@@ -522,10 +529,10 @@ p {
         padding: 0 5px;
     }
     .help .eg .input-group-text {
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
     .help .eg input.form-control {
-        font-size: 1rem;
+        font-size: 1.5rem;
         padding: .375rem .75rem;
     }
     .help .card {
@@ -535,7 +542,7 @@ p {
         padding: 1.25rem 1.25rem 0 1.25em;
     }
     .help .card .card-text {
-        font-size: 15px;
+        font-size: 20px;
     }
     .help .card ul {
         padding: 0 20px;
@@ -550,20 +557,10 @@ p {
         padding-top: 0!important;
     }
     .help h1 {
-        font-size: 4em;
+        font-size: 4em !important;
     }
     .help .block-title p {
-        font-size: 1.5em !important;
-        margin-top: 0;
-        margin-bottom: 1rem;
-        font-family: arial, helvetica !important;
-        padding: 0 5px;
-    }
-    .help .block-title {
-        padding: 0!important;
-    }
-    .help .eg {
-        padding: 0 5px;
+        font-size: 1.3em !important;
     }
     .help .eg .input-group-text {
         font-size: 1rem;
@@ -572,24 +569,15 @@ p {
         font-size: 1rem;
         padding: .375rem .75rem;
     }
-    .help .card {
-        margin: 0 !important;
-    }
-    .help .card .card-body {
-        padding: 1.25rem 1.25rem 0 1.25em;
-    }
-    .help .card .card-text {
-        font-size: 15px;
-    }
-    .help .card ul {
-        padding: 0 20px;
-    }
 }
 
 
 /* Extra large devices (large desktops, 1200px and up) */
 
 @media (min-width: 1200px) {
+    .help h1 {
+        font-size: 6em !important;
+    }
     .pt-cxs-4 {
         padding-top: 0!important;
     }
@@ -918,4 +906,8 @@ p {
 
 .help p.eg {
     font-size: 1em;
+}
+
+.help .copyrights {
+    color: #fff !important;
 }
