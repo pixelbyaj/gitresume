@@ -273,39 +273,46 @@
     </div>
     <div id="helpPage">
         <template id="help">
-            <div class="row help">
-                <div class="col block-title">
-                    <h1>GistResume</h1>
-                    <p>
-                        We offers a hosting service that renders your beautiful scrolling resume website powered by
-                        sitePage.js and <a href="https://jsonresume.org/schema/" target="_blank">JSON Resume Schema</a>
-                    </p>
-                    <div class="eg">
-                        <form action="https://www.gistresume.com/">
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="q-url">https:\\www.gistresume.com?q=</span>
+            <div class="container-fluid">
+                <div class="row help">
+                    <div class="col-xs-12 col-lg-6 block-title">
+                        <h1>GistResume</h1>
+                        <p>
+                            We offers a hosting service that renders your beautiful scrolling resume website powered by
+                            sitePage.js and <a href="https://jsonresume.org/schema/" target="_blank">JSON Resume
+                                Schema</a>
+                        </p>
+                        <div class="eg">
+                            <form action="https://www.gistresume.com/">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="q-url">https:\\www.gistresume.com?q=</span>
+                                    </div>
+                                    <input type="text" class="form-control" id="q" name="q"
+                                        placeholder="GitHub Username" aria-describedby="q-url">
                                 </div>
-                                <input type="text" class="form-control" id="q" name="q" placeholder="GitHub Username"
-                                    aria-describedby="q-url">
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Get Started ...</h5>
-                            <div class="card-text steps">
-                                <ul>
-                                    <li>Create Gist on Github named resume.json</li>
-                                    <li>Our hosting service will automatically detect your Gist Resume.json and render it</li>
-                                    <li>With same schema you can also render your Resume with different JSON Resume themes</li>
-                                    <li>Export your resume with resume-cli (npm i -g resume-cli)</li>
-                                    <li>One of JSON Resume community members wrote a great Chrome extension to import your LinkedIn Profile
-                                         <a href="https://chrome.google.com/webstore/detail/linkedin-json-resume-expo/jcaldklkmnjfpjaboilcejindjejbklh?hl=en">Download</a>
-                                    </li>
-                                </ul>
+                    <div class="col-xs-12 col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Get Started ...</h5>
+                                <div class="card-text steps">
+                                    <ul>
+                                        <li>Create Gist on Github named resume.json</li>
+                                        <li>Our hosting service will automatically detect your Gist Resume.json and
+                                            render it</li>
+                                        <li>With same schema you can also render your Resume with different JSON Resume
+                                            themes</li>
+                                        <li>Export your resume with resume-cli (npm i -g resume-cli)</li>
+                                        <li>One of JSON Resume community members wrote a great Chrome extension to
+                                            import your LinkedIn Profile
+                                            <a
+                                                href="https://chrome.google.com/webstore/detail/linkedin-json-resume-expo/jcaldklkmnjfpjaboilcejindjejbklh?hl=en">Download</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>

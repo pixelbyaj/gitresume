@@ -16,6 +16,7 @@ const gitCV = function(userName) {
     };
 
     const hideAll = function() {
+        $(".navbar").hide();
         $("#gitcv").hide();
         $(".copyrights").hide();
         $(".preloader").css("display", "none");
@@ -47,6 +48,7 @@ const gitCV = function(userName) {
     }
     if (!userName) {
         $(".preloader").css("display", "none");
+        $(".navbar").hide();
         return {
             init: initSitePage
         }
