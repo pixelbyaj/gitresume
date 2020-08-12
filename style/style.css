@@ -546,6 +546,9 @@ p {
     .help .card .card-text {
         font-size: 15px;
     }
+    .help .card ul {
+        padding: 0 20px;
+    }
 }
 
 
