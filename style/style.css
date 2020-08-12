@@ -581,6 +581,9 @@ p {
     .pt-cxs-4 {
         padding-top: 0!important;
     }
+    .help .card .card-text {
+        font-size: 16px;
+    }
 }
 
 .autoscroll {
