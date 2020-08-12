@@ -466,6 +466,9 @@ p {
     .help .card {
         margin: 0 !important;
     }
+    .help .card .card-body {
+        padding: 1.25rem 1.25rem 0 1.25em;
+    }
     .help .card .card-text {
         font-size: 12px;
     }
