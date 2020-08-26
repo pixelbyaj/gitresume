@@ -2,6 +2,19 @@
 <html lang="en">
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176409946-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-176409946-1');
+    </script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/sitepage.js@3.0.0/dist/style/sitepage.min.css" />
@@ -300,8 +313,9 @@
                                 <h5 class="card-title">Get Started ...</h5>
                                 <div class="card-text steps">
                                     <ul>
-                                        <li>Create Gist on Github named resume.json with <a href="https://jsonresume.org/schema/" target="_blank">JSON Resume
-                                            Schema</a></li>
+                                        <li>Create Gist on Github named resume.json with <a
+                                                href="https://jsonresume.org/schema/" target="_blank">JSON Resume
+                                                Schema</a></li>
                                         <li>Our hosting service will automatically detect your Gist Resume.json and
                                             render it</li>
                                         <li>With same schema you can also render your Resume with different JSON Resume
