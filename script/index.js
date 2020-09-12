@@ -317,5 +317,6 @@ var userName = GetUserName();
 if (!userName) {
     new gitCV().init(sections, "helpPage");
 } else {
+    document.querySelector("title").text = `Gist Resume - ${userName}`;
     new gitCV(userName).init();
 }
